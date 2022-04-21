@@ -5,10 +5,10 @@ import java.io.InputStream;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Map;
 import java.util.TimeZone;
 
 //< HTTP/1.1 200 OK
@@ -45,12 +45,18 @@ public class ScurlServer {
 
             PrintStream out = new PrintStream(socket.getOutputStream());
 
+            InputStream in = socket.getInputStream();
             byte[] byteArr = new byte[2048];
 
-            InputStream in = socket.getInputStream();
             int readByteCount = in.read(byteArr);
 
             String data = new String(byteArr, 0, readByteCount, "UTF-8");
+            String[] requestMessage = data.split("\r\n\r\n");
+            String requestMessageHead = requestMessage[0];
+            String requestMessageBody = null;
+            if (requestMessage.length == 2) {
+                requestMessageBody = requestMessage[1];
+            }
 
             Date currentTime = new Date();
 
@@ -77,10 +83,12 @@ public class ScurlServer {
 //            out.println(responseHeadMessage.getBytes(StandardCharsets.UTF_8));
             System.out.println("----------");
             System.out.println(data);
-            String[] arr = data.split("\n");
+            String[] arr = requestMessageHead.split("\n");
 
-            String contentType = null;
+            String stateCode = "200 OK"; // redirection 및 400 터트려야할 때는 바꾸어야 하니 나중에 조건문 달아서 바꿔주자
             String contentLength = null;
+            String contentType = null;
+
             for (String s : arr) {
                 if (s.contains("Content-Type")) {
                     System.out.println("xxxx");
@@ -91,11 +99,22 @@ public class ScurlServer {
                     contentLength = s.substring(16, s.length() - 1);
                 }
             }
+            ResponseMessageBody responseMessageBody = new ResponseMessageBody();
+
+            if (requestMessageBody != null) {
+                JsonToMap jsonToMap = new JsonToMap(requestMessageBody);
+                Map<String, String> jsonMap = jsonToMap.parsing();
+
+                responseMessageBody.addJson(jsonMap);
+            }
+
+            // Serialize 해보자-------------------------------------------------
+
+            JsonSerialization jsonSerialization = new JsonSerialization(responseMessageBody);
+            String responseBodyJson = jsonSerialization.serialize().replace("null", "{}");
+            System.out.println(responseBodyJson);
 
             System.out.println(contentType + " " + contentLength);
-
-
-
 
 
         } catch (IOException e) {
