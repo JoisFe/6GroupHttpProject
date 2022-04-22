@@ -15,11 +15,12 @@ public class JsonSerialization {
 
         String jsonString = null;
         try {
-            jsonString = objectMapper.writeValueAsString(responseMessageBody);
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(responseMessageBody);
         } catch (JsonProcessingException e) {
             e.printStackTrace();
         }
 
         return jsonString;
+
     }
 }
