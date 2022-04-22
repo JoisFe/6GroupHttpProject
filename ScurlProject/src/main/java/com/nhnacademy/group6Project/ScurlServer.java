@@ -58,19 +58,6 @@ public class ScurlServer {
                 requestMessageBody = requestMessage[1];
             }
 
-            Date currentTime = new Date();
-
-            SimpleDateFormat dateFormat =
-                new SimpleDateFormat("EEE, d MMM yyyy hh:mm:ss z", Locale.ENGLISH);
-
-            dateFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
-            System.out.println(dateFormat.format(currentTime));
-
-            //String respondMessage[] = data.split("\r\n\r\n");
-
-            System.out.println(data);
-            String date = "Date: " + data;
-
             String responseHeadMessage = "HTTP/1.1 200 OK\n"
                 + "Content-Type: application/json\n" + "Content-Length: 254\n" + "Connection: keep-alive\n"
                 + "Server: gunicorn/19.9.0\n" + "Access-Control-Allow-Origin: *\n" + "Access-Control-Allow-Credentials: true\n"
@@ -80,7 +67,7 @@ public class ScurlServer {
 
 
             out.println(responseHeadMessage);
-//            out.println(responseHeadMessage.getBytes(StandardCharsets.UTF_8));
+
             System.out.println("----------");
             System.out.println(data);
             String[] arr = requestMessageHead.split("\n");
@@ -115,7 +102,6 @@ public class ScurlServer {
             System.out.println(responseBodyJson);
 
             System.out.println(contentType + " " + contentLength);
-
 
         } catch (IOException e) {
             e.printStackTrace();
