@@ -105,13 +105,13 @@ public class ScurlServer {
                 JsonToMap jsonToMap = new JsonToMap(requestMessageBody);
                 Map<String, String> jsonMap = jsonToMap.parsing();
 
-                responseMessageBody.addJson(jsonMap);
+                responseMessageBody.setJson(jsonMap);
             }
 
             // Serialize 해보자-------------------------------------------------
 
             JsonSerialization jsonSerialization = new JsonSerialization(responseMessageBody);
-            String responseBodyJson = jsonSerialization.serialize().replace("null", "{}");
+            String responseBodyJson = jsonSerialization.serialize();
             System.out.println(responseBodyJson);
 
             System.out.println(contentType + " " + contentLength);
