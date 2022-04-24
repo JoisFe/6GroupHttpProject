@@ -268,4 +268,4 @@ $ curl -v -F "upload=@msg.json" http://test-vm.com/post
 ### curl 로 desktop 폴더에 존재하는 파일을 업로드 한 후 desktop 폴더에 msg.json 파일이 존재하고 내용이 잘 들어와있음을 확인할 수 있음
 <img width="449" alt="image" src="https://user-images.githubusercontent.com/90208100/164964564-5844fb04-4f10-47b8-a882-522bea143dff.png">
 
-##현재는 한 로컬에서 존재하는 파일을 자신의 ip에 curl을 쏴서 파일을 업로드 하지만 다른 ip에서 파일을 업로드 하면 desktop/file/ 위치에 해당 파일이 업로드 됨
+## 현재는 한 로컬에서 존재하는 파일을 자신의 ip에 curl을 쏴서 파일을 업로드 하지만 다른 ip에서 파일을 업로드 하면 desktop/file/ 위치에 해당 파일이 업로드 됨
