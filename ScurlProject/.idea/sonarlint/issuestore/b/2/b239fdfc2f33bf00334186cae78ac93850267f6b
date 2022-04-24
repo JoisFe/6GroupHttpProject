@@ -1,0 +1,19 @@
+
+h
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(Çµí‘
+O
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(…©Ï¯
+H
+java:S14819"2Remove this unused "contentLength" local variable.(¼úÊü
+Z	java:S106B"9Replace this use of System.out or System.err by a logger.(©¨Òüÿÿÿÿ8ãÈÔÔ…0
+2
+java:S1116f"Remove this empty statement.(ĞÉüÎ
+7
+java:S1116z"Remove this empty statement.(ÉŸ¾òÿÿÿÿÿ
+i
+java:S3776“"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(à²ëá
+P
+java:S1141["5Extract this nested try block into a separate method.(üêÇ øÿÿÿÿ
+2
+java:S1643'"Use a StringBuilder instead.(Ìßø¦
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éÃŞ¦üÿÿÿÿ

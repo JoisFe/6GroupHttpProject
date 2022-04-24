@@ -59,11 +59,11 @@ public class ScurlServer {
             if (requestMessageBody != null) {
                 Map<String, String> jsonMap = null;
 
-                if (requestMessageContent.getRequestContentType().equals("application/json")) {
+                if (requestMessageContent.getRequestContentType().equals("application/json\r")) {
                     JsonToMap jsonToMap = new JsonToMap(requestMessageBody);
                     jsonMap = jsonToMap.parsing();
 
-
+                    System.out.println("fsafsfds");
                     postResponseMessageBody.setData(jsonMap);
                     postResponseMessageBody.setJson(jsonMap);
                 }
@@ -84,7 +84,7 @@ public class ScurlServer {
                     postResponseMessageBody.setFiles(map);
 
                     // File 만들기
-                    File file = new File("/Users/jo/desktop/file/" + fileName);
+                    File file = new File("/home/ubuntu/file/" + fileName);
                     String fileContets = fileData;
                     byte[] bytes = fileContets.getBytes();
 
