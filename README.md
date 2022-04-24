@@ -255,7 +255,7 @@ $ curl -v -F "upload=@msg.json" http://test-vm.com/post
 <br>
 
 - 3-1
-<img width="1078" alt="image" src="https://user-images.githubusercontent.com/90208100/164960998-1727df61-82ca-4cce-a8f2-2850bc4b5852.png">
+<img width="754" alt="image" src="https://user-images.githubusercontent.com/90208100/164968991-46b248cb-ae80-4e75-ad3a-878fe0ffe0c2.png">
 - 3-2
 ### 현재 내 desktop 폴더 내 file 폴더에는 아무런 파일이 존재하지 않음
 <img width="423" alt="image" src="https://user-images.githubusercontent.com/90208100/164961855-759973b5-5b96-4751-8e68-a3143335b674.png">
@@ -269,3 +269,16 @@ $ curl -v -F "upload=@msg.json" http://test-vm.com/post
 <img width="449" alt="image" src="https://user-images.githubusercontent.com/90208100/164964564-5844fb04-4f10-47b8-a882-522bea143dff.png">
 
 ## 현재는 한 로컬에서 존재하는 파일을 자신의 ip에 curl을 쏴서 파일을 업로드 하지만 다른 ip에서 파일을 업로드 하면 desktop/file/ 위치에 해당 파일이 업로드 됨
+
+# 우분투 서버에 내 로컬에서 curl을 쏴보기
+### 3-2 file 부분만 해보려고 합니다.
+우분투 서버에 file 디렉터리를 만들었고 클라이언트가 curl로 파일 업로드를 요청시 이곳에 저장이 되게 구현하였습니다.
+현재는 file 디렉터리가 비어있음을 확인할 수 있습니다.
+<img width="433" alt="image" src="https://user-images.githubusercontent.com/90208100/164969105-bdabf941-e7d7-4ffd-8e8c-24da2fda6f26.png">
+<br>
+로컬에 있는 msg.json 파일을 curl 통해 우분투 서버에 업로드 요청을 하였습니다.
+<img width="1017" alt="image" src="https://user-images.githubusercontent.com/90208100/164969055-8b6b628d-bdb2-4f1b-aaf2-1ca83221d1d8.png">
+<br>
+그리고 우분투 서버에 file 디렉토리에 msg.json이 저장되어있음을 확인할 수 있고 <br>
+내용도 잘 저장되어있음을 확인할 수 있습니다.<br>
+<img width="698" alt="image" src="https://user-images.githubusercontent.com/90208100/164969072-e0db08c5-7c46-480b-820b-51fe48eade21.png">
