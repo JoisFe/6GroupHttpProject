@@ -243,7 +243,7 @@ $ curl -v -F "upload=@msg.json" http://test-vm.com/post
 * curl 등으로 실제 http 서버가 어떻게 응답을 하고 있는지 확인하면서 진행하면 좋을 것 같습니다.
 
 # 해당 결과
-- 1
+- 3
 <img width="717" alt="image" src="https://user-images.githubusercontent.com/90208100/164960860-31cc5641-3e9e-47e9-9b17-ace5c1d1ddea.png">
 <br>
 - 2-1
