@@ -272,11 +272,11 @@ $ curl -v -F "upload=@msg.json" http://test-vm.com/post
 
 # 우분투 서버에 내 로컬에서 curl을 쏴보기
 ### 3-2 file 부분만 해보려고 합니다.
-우분투 서버에 file 디렉터리를 만들었고 클라이언트가 curl로 파일 업로드를 요청시 이곳에 저장이 되게 구현하였습니다.
-현재는 file 디렉터리가 비어있음을 확인할 수 있습니다.
+우분투 서버에 file 디렉터리를 만들었고 클라이언트가 curl로 파일 업로드를 요청시 이곳에 저장이 되게 구현하였습니다.<br>
+현재는 file 디렉터리가 비어있음을 확인할 수 있습니다. <br>
 <img width="433" alt="image" src="https://user-images.githubusercontent.com/90208100/164969105-bdabf941-e7d7-4ffd-8e8c-24da2fda6f26.png">
 <br>
-로컬에 있는 msg.json 파일을 curl 통해 우분투 서버에 업로드 요청을 하였습니다.
+로컬에 있는 msg.json 파일을 curl 통해 우분투 서버에 업로드 요청을 하였습니다.<br>
 <img width="1017" alt="image" src="https://user-images.githubusercontent.com/90208100/164969055-8b6b628d-bdb2-4f1b-aaf2-1ca83221d1d8.png">
 <br>
 그리고 우분투 서버에 file 디렉토리에 msg.json이 저장되어있음을 확인할 수 있고 <br>
